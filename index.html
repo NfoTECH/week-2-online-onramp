@@ -8,7 +8,65 @@
     <title>Week-2-Task</title>
   </head>
   <body>
-    <h1>Week 2 Task</h1>
+    <div id="container">
+      <div class="child">
+        <h1>CONTACT US</h1>
+        <form method="" action="">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control error"
+            placeholder="NAME"
+            required
+          />
+          <small class="error"></small> <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="EMAIL"
+            required
+          />
+          <small class="error"></small> <br />
+          <input
+            type="tel"
+            id="phone-no"
+            name="phone"
+            class="form-control"
+            placeholder="PHONE NUMBER"
+            required
+          />
+          <small class="error"></small> <br />
+          <textarea
+            name="message"
+            id="message"
+            class="form-control"
+            cols="30"
+            rows="4"
+            placeholder="MESSAGE"
+            required
+          ></textarea>
+          <small class="error"></small> <br />
+          <input
+            id="submit-btn"
+            class="btn"
+            onclick="submit()"
+            type="submit"
+            value="SEND"
+          />
+          <input
+            id="cancel-btn"
+            class="btn"
+            onclick="cancel()"
+            type="reset"
+            value="CANCEL"
+          />
+          <p id="success"></p>
+        </form>
+      </div>
+    </div>
   </body>
   <script src="./frontend/script.js"></script>
 </html>
