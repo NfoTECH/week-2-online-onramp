@@ -18,7 +18,6 @@
             name="name"
             class="form-control error"
             placeholder="NAME"
-            required
           />
           <small class="error"></small> <br />
           <input
@@ -27,7 +26,6 @@
             name="email"
             class="form-control"
             placeholder="EMAIL"
-            required
           />
           <small class="error"></small> <br />
           <input
@@ -36,7 +34,6 @@
             name="phone"
             class="form-control"
             placeholder="PHONE NUMBER"
-            required
           />
           <small class="error"></small> <br />
           <textarea
@@ -46,24 +43,10 @@
             cols="30"
             rows="4"
             placeholder="MESSAGE"
-            required
           ></textarea>
           <small class="error"></small> <br />
-          <input
-            id="submit-btn"
-            class="btn"
-            onclick="submit()"
-            type="submit"
-            value="SEND"
-          />
-          <input
-            id="cancel-btn"
-            class="btn"
-            onclick="cancel()"
-            type="reset"
-            value="CANCEL"
-          />
-          <p id="success"></p>
+          <input id="send-btn" class="btn" type="submit" value="SEND" />
+          <input id="cancel-btn" class="btn" type="reset" value="CANCEL" />
         </form>
       </div>
     </div>

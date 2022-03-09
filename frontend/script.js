@@ -1,55 +1,36 @@
-
+let nameInput = document.querySelector("#name");
 let emailInput = document.querySelector("#email");
 let phoneInput = document.querySelector("#phone-no");
 let messageInput = document.querySelector("#message");
+let cancelBtn = document.querySelector("#cancel-btn");
+let sendBtn = document.querySelector("#send-btn");
 
-function nameValidity() {
-    let nameInput = document.querySelector("#name").value;
-    if (nameInput !== String && nameInput == 0) {
-        alert ("Name is required");
-    } else {
-        alert ("success")
-    }
+function clearFields() {
+    nameInput.value = '';
+    emailInput.value = '';
+    phoneInput.value = '';
+    messageInput.value = '';
 }
- function emailValidity () {
-     let email = emailInput.textContent;
-     let pattern = /\S+@\S+\.\S+/;
-     if (email !== pattern) {
-         alert ("please put a valid email")
-     } else{
-         alert ("success")
-        return pattern.test(email);
-     }
- }
- function phoneValidity () {
-     let phone = phoneNo.textContent
-     if (phone !== Number) {
-         alert ("phone number field must contain only numbers");
-     } else {
-         alert ("success")
-     }
- }
+ cancelBtn.addEventListener("click", clearFields);
 
- function messageValidity () {
-     let message = messageInput.textContent
-     if (message > 100) {
-         alert ("message field cannot have more than 100 characters")
-     } else {
-         alert ("success")
-     }
-    }
-
-function cancel() {
-    nameValidity() = "";
-    emailValidity() = "";
-    phoneValidity() = "";
-    messageValidity() = "";
-}
-
-function submit() {
-if (!nameValidity() || ! emailValidity() || ! phoneValidity() || ! messageValidity()) {
-    alert('all input boxes must be filled');
-} else {
-    alert("welcome" + nameInput.value);
-}
-}
+ sendBtn.addEventListener ("click", () => {
+        if (
+         !nameInput.value ||
+         !emailInput.value ||
+         !phoneInput.value ||
+         !messageInput.value
+        ) {
+            alert ("All Input Boxes Must Be Filled");
+            return;
+        }
+        if (isNaN(phoneInput.value)) {
+            alert ("Phone Input Field Must Contain Only Numbers");
+            return;
+        }
+        if (messageInput.value > 100) {
+            alert ("Message Field Cannot Have More Than 100 Characters");
+            return;
+        }
+        alert ("Welcome" + " " + nameInput.value);
+        clearFields();
+ })
